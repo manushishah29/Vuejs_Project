@@ -85,7 +85,6 @@ export default {
               this.$emit('close-modal')
               this.$toast.success('Folder Updated SuccessFully')
               this.$emit('update-modal')
-              console.log('updated folder name',this.folderName)
 
             }
           })

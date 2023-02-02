@@ -24,11 +24,9 @@ export default {
 
   mounted()    {
     this.getOneUrl(this.$route?.query?.fileToken)
-    console.log('mounted',typeof this.$route?.query?.fileToken)
   },
   methods: {
     getOneUrl(fileToken) {
-      console.log('in getUrl', this.$route?.query?.fileToken)
       const requestedData = {
         fileToken: fileToken
       };
@@ -36,7 +34,6 @@ export default {
           .then(response => {
             if (response?.data) {
               window.open(response.data.data)
-              console.log('in if',this.$route?.query?.fileToken)
             }
 
           })

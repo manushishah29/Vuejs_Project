@@ -202,7 +202,6 @@ export default {
               })
 
               this.folderId = this.folderOptions[0].value
-              console.log('this.folderId', this.folderId)
 
             }
           })
@@ -237,20 +236,7 @@ export default {
         ul.scrollTop = scrollTop
       }
     },
-    // getFolderId(id){
-    //   getFolderById({ id })
-    //
-    //       .then(response => {
-    //         if (response?.data) {
-    //           console.log("folderList",this.folderList)
-    //           this.folderId=this.folderList.value
-    //           console.log("response.data.data.id",this.folderId)
-    //         }
-    //       })
-    //       .catch(e => {
-    //         console.log(e)
-    //       })
-    // },
+
     closeModal() {
       this.$emit('close-modal')
     },

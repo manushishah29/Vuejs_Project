@@ -471,7 +471,6 @@ export default {
       })
           .then(response => {
             if (response?.data) {
-              console.log(' All data', response.data.data.data.content)
 
               this.tableData = response.data.data.data.content
               this.totalRecords = response.data.data.data.totalElements
@@ -507,12 +506,9 @@ export default {
                     isActive: true,
                   });
                 }
-                console.log("folder Data",response.data.data.data.content)
-                console.log(' get folder Data response.data.data.data.name', data.name)
                 this.tableData = response.data.data.data.content
                 this.totalRecords = response.data.data.data.totalElements
                 this.currentFolderId = response.data.data.currentFolderId
-                console.log('this.currentFolderId',this.currentFolderId)
 
               }
             })
@@ -521,7 +517,6 @@ export default {
             })
       } else {
         this.openFileContentModal(data)
-        // console.log('file id', data.item)
       }
     },
     checkExistingFolderBreadcrumbs(folderId) {

@@ -420,9 +420,7 @@ export default {
     //   }
     // },
     loadMoreChatMessage($state) {
-      console.log('this.lastPage',this.lastPage)
       if (!this.lastPage) {
-        console.log('this.lastPage',this.lastPage)
         this.loadChatMessages($state);
       }
     },
@@ -431,18 +429,10 @@ export default {
           .then((response) => {
             if (response.data) {
               this.lastPage = response.data.data.last;
-              console.log('this.lastPage',this.lastPage)
               this.requestData.pageNo += 1;
               this.msgData.unshift(...response.data.data.content.reverse());
-              // const chatApp = document.getElementById("chat-box");
-              // this.setLoader();
+
               this.lastPage ? $state.complete() : $state.loaded();
-              // if (this.isUnreadMessageAvailable) {
-              //   this.$nextTick(() => chatApp.scrollTo(0, 0));
-              //   this.isUnreadMessageAvailable = false;
-              // } else if (this.lastPage && response.data.data.first) {
-              //   this.$nextTick(() => chatApp.scrollTo(0, chatApp.scrollHeight));
-              // }
             }
           })
           .catch((e) => {
@@ -503,13 +493,11 @@ export default {
     openDeleteChatModal(messId) {
       this.showModal=true
       this.messageId=messId
-      console.log('messId',messId)
     },
     openEditChatModal(data){
       this.showEditChatModal=true
       this.messageId=data.id
       this.messageData=data.message
-      console.log('this.message',this.messageData)
     },
     closeModal() {
       this.showModal=false
@@ -534,7 +522,6 @@ export default {
     },
     openReadDocumentModal(fileDetails) {
       this.viewFileDetails.fileId = fileDetails.fileId
-      console.log('fileDetails.message', fileDetails.message)
       const fileExtension = extractFileFormat(fileDetails.message)
 
       if (this.displayImageFormat.includes(fileExtension)) {

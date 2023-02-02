@@ -78,13 +78,10 @@ export default {
     updateChatDetail() {
       const requestData = new FormData()
       requestData.set('message', this.messageData)
-      console.log(this.messageData)
       requestData.set('id', this.messageId)
-      console.log(this.messageId)
       updateMessage(this.requestData,this.messageId)
           .then((response) => {
             if (response) {
-              console.log('in update',this.messageData)
               this.$emit('update-message')
               this.$toast.success('Message Updated SuccessFully')
               this.$emit('close-modal')

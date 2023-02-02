@@ -193,7 +193,7 @@ export const getShareLink = requestData => axios({
 
 export const oneTimeUrlShare = requestData => axios({
 
-  url: `${service.apiUrl}z/doc-lib/oneTimeUrlShare`,
+  url: `${service.apiUrl}/doc-lib/oneTimeUrlShare`,
   method: 'get',
   params: requestData,
   headers: {

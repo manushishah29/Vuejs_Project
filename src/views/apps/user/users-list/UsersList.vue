@@ -218,12 +218,9 @@ export default {
       }, this.requestData.companyId)
           .then(response => {
             if (response?.data?.data?.content) {
-              console.log('companyId', this.requestData.companyId)
               if (this.requestData.companyId) {
                 this.tableData = response.data.data.content
                 this.totalRecords = response.data.data.totalElements
-                console.log('table data', this.tableData)
-                console.log('this.totalRecords',this.totalRecords)
               }
             }
           })

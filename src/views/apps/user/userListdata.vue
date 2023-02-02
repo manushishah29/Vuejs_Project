@@ -254,11 +254,9 @@ export default {
         ...this.requestData,
       })
         .then(response => {
-          console.log(' before data printed')
           if (response.data.content !== '') {
             this.tableData = response.data.content
             this.totalrecords = response.data.totalElements
-            console.log('table data', this.tableData)
           }
         }).catch(e => {
           console.log(e)
